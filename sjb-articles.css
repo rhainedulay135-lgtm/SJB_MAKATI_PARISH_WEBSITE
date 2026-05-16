@@ -1,0 +1,86 @@
+/* LECTIO DIVINA SECTION */
+#lectio-divina {
+    background: var(--primary);
+}
+.lectio-divina-container {
+    margin: auto 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.lectio-left-container {
+    margin-bottom: 2.5rem;
+    text-align: left;
+    line-height: 1.5cm;
+    width: 1000px;
+
+    h1 {
+        font-size: 50px;
+    }
+    a {
+        color: var(--secondary);
+    }
+}
+
+.lectio-right-container {
+    width: 500px;
+    margin: 7.5rem 0;
+}
+.lectio-image1 {
+    display: flex;
+    align-items: center;
+    background: url(../IMAGES/far-front-pic.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 300px;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.lectio-image2 {
+    display: flex;
+    align-items: center;
+    background: url(../IMAGES/close-pic-front.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 300px;
+    margin-top: 2.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.lectio-second-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5rem;
+    box-shadow: var(--box-shadow);
+    background: var(--white-text);
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.lectio-third-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5rem;
+    color: var(--white-text);
+    background: var(--accent);
+    box-shadow: var(--box-shadow-up);
+
+    p {
+        font-size: 20px;
+    }
+    a {
+        color: var(--secondary);
+    }
+}

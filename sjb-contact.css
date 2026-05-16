@@ -1,0 +1,214 @@
+/* CONTACT FORM */
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+    margin: auto;
+    max-width: 1240px;
+    padding: 75px 30px;
+}
+
+.contact-text {
+    margin-top: 7rem;
+    margin-left: 6rem;
+
+    h1 {
+    font-size: 45px;
+    color: var(--accent);
+    }
+    h2 {
+    font-size: 30px;
+    color: var(--secondary);
+    }
+    a {
+        color: var(--secondary);
+        text-decoration: none;
+        border-bottom: 1px solid black;
+    }
+}
+
+.form {
+    margin: 40px auto;
+    padding: 25px;
+    width: 600px;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+label {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.200);
+    background: transparent;
+    padding: 8px 0;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 1px solid black;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Poppins';
+}
+
+/* MASS & BLESSING REQUEST */
+.mass-blessing-request-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    background-image: url('../IMAGES/far-front-pic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.mass-blessing-request-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.mass-request-title {
+    color: var(--accent);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.mass-blessing-request-form {
+    background: var(--white-text);
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 50%;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+        font-size: 50px;
+    }
+}
+
+.mass-req-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.mass-req-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+} 
+
+.mass-request-form {
+input,
+select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    width:90%;
+    }
+}
+textarea{
+    resize:none;
+    height:80px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    width:97%;
+}
+
+.checkbox-group{
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      gap:15px;
+      margin-top:0;
+      width: 100%;
+      min-height: 48px;
+}
+
+.checkbox-group p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+}
+
+.short {
+    width: 80%;
+}
+
+.mass-request-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mass-req-row:last-child {
+    margin-bottom: 20px;
+}
+.small {
+    
+}
+
+.mass-request-form input[type="submit"] {
+    width: 50%;
+    align-self: center;
+    border: 1px solid black;
+}
+/* DONATION */
+.donation-container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 7.5rem 5rem;
+}
+
+.donation-text-container {
+
+    h1 {
+        font-size: 50px;
+    }
+    img {
+        margin: 0 auto;
+        height: 600px ;
+        width: auto;
+    }
+    p {
+        font-size: 17.5px;
+    }
+    a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+}

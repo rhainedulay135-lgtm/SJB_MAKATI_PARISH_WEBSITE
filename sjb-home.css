@@ -1,0 +1,102 @@
+/* LANDING PAGE SECTION */
+.landing {
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.landing-content {
+  display: flex;
+  align-items: center;
+  max-width: 2500px;
+  margin: auto;
+}
+
+.landing-text {
+  max-width: 1000px;
+
+    h1 {
+    font-size: 3vw;
+    color: var(--accent);
+    margin-bottom: 15px;
+    }
+    p {
+    margin-bottom: 20px;
+    line-height: 2;
+    }
+    .badge {
+    background: var(--secondary);
+    color: var(--white-text);
+    padding: 6px 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+    }
+}
+
+.landing-pic img {
+  height: 35vw;
+  width: auto;
+}
+
+/* CAROUSEL */
+.carousel-section {
+  background: #b0893c38;
+  padding: 10rem 0rem;
+}
+
+.carousel {
+  margin: 100px auto;
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: spin 30s infinite linear;
+}
+
+.card {
+  width: 20vw;
+  aspect-ratio: 3/4;
+  background: yellow;
+  font-size: 3rem;
+  border-radius: .2em;
+  text-align: center;
+  align-content: center;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@keyframes spin { 
+  from {translate: 0;}
+  to {translate: -100%;}
+}
+
+/* DB QUOTE  */
+.don-bosco-quote {
+  background: var(--accent);
+  color: var(--white-text);
+  padding:5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  p {
+    font-size: 25px;
+  }
+}

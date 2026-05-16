@@ -1,0 +1,196 @@
+.time {
+    font-size: 20px
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mass-schedules {
+    background: var(--primary);
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+    box-shadow: var(--box-shadow);
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 2.5px 5px;
+    width: 300px;
+    color: var(--white-text);
+    background: var(--secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.mass-schedules-first-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5rem 20rem;
+    background: var(--primary);
+    line-height: 1cm;
+
+    h3 {
+        color: var(--accent);
+    }
+    .mass-agenda {
+        color: var(--secondary);
+    }
+    div:nth-child(2) {
+        margin-top: -3.5rem;
+    }
+}
+
+.mass-schedules-second-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 1cm;
+    padding: 2.5rem 10rem;
+
+    div:nth-child(2) {
+        margin-top: -7rem;
+    }
+}
+
+/* PARISH STORE */
+.parish {
+    padding: 5rem 5rem;
+}
+.parish-store-first-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 1cm;
+    padding: 5rem 20rem;
+
+    h3 {
+        color: var(--accent);
+    }
+    div:nth-child(2) {
+        margin-top: -3.5rem;
+    }
+}
+
+.parish-store-second-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 1cm;
+    padding: 7rem 20rem;
+
+    h3 {
+        color: var(--accent);
+    }
+    a {
+        font-size: 20px;
+        color: var(--secondary);
+        text-decoration: none;
+    }
+}
+/* BAPTISM */
+.baptism {
+    box-shadow: var(--box-shadow-up);
+    background: var(--primary);
+    padding: 5rem 5rem;
+}
+.baptism-first-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1cm;
+    background: var(--primary);
+
+    p {
+        font-size: 20px;
+    }
+}
+hr {
+    width: 80%;
+}
+
+.baptism-second-container-title {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.baptism-second-container-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 7.5rem;
+
+    h3 {
+        color: var(--accent);
+    }
+}
+
+/* WEDDINGS */
+.weddings {
+    box-shadow: var(--box-shadow-up);
+    padding: 5rem 5rem;
+
+    span {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .punc {
+        text-align: center;
+        max-width: 75%;
+        margin: auto;
+    }
+}
+.weddings-first-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.weddings-second-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.weddings-third-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+    margin: auto;
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.weddings-fourth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 20px;
+    }
+}
