@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SJB Makati Parish</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Panel</h2>
+                <button class="logout-btn" onclick="adminLogout()">Logout</button>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" onclick="showAdminSection('dashboard')" class="menu-item active">
+                    📊 Dashboard
+                </a>
+                <a href="#" onclick="showAdminSection('pending')" class="menu-item">
+                    ⏳ Pending Bookings
+                </a>
+                <a href="#" onclick="showAdminSection('approved')" class="menu-item">
+                    ✓ Approved
+                </a>
+                <a href="#" onclick="showAdminSection('declined')" class="menu-item">
+                    ✗ Declined
+                </a>
+                <a href="#" onclick="showAdminSection('calendar')" class="menu-item">
+                    📅 Calendar
+                </a>
+                <a href="#" onclick="showAdminSection('settings')" class="menu-item">
+                    ⚙️ Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-info">
+                    <span id="adminName">Admin User</span>
+                    <span id="currentTime">--:--</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <h2>Dashboard Overview</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-content">
+                            <h3>Pending Bookings</h3>
+                            <p class="stat-number" id="pendingCount">0</p>
+                            <small id="urgentCount">0 Urgent (Funerals)</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✓</div>
+                        <div class="stat-content">
+                            <h3>Approved This Week</h3>
+                            <p class="stat-number" id="approvedWeek">0</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✗</div>
+                        <div class="stat-content">
+                            <h3>Declined This Week</h3>
+                            <p class="stat-number" id="declinedWeek">0</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3>Total Bookings</h3>
+                            <p class="stat-number" id="totalBookings">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Quick Stats by Sacrament</h3>
+                    <div class="stats-table">
+                        <div class="table-row header">
+                            <div class="table-cell">Sacrament</div>
+                            <div class="table-cell">Total</div>
+                            <div class="table-cell">Pending</div>
+                            <div class="table-cell">Approved</div>
+                            <div class="table-cell">Declined</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">💍 Wedding</div>
+                            <div class="table-cell" id="weddingTotal">0</div>
+                            <div class="table-cell" id="weddingPending">0</div>
+                            <div class="table-cell" id="weddingApproved">0</div>
+                            <div class="table-cell" id="weddingDeclined">0</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">👶 Baptism</div>
+                            <div class="table-cell" id="baptismTotal">0</div>
+                            <div class="table-cell" id="baptismPending">0</div>
+                            <div class="table-cell" id="baptismApproved">0</div>
+                            <div class="table-cell" id="baptismDeclined">0</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">🙏 Funeral</div>
+                            <div class="table-cell" id="funeralTotal">0</div>
+                            <div class="table-cell" id="funeralPending">0</div>
+                            <div class="table-cell" id="funeralApproved">0</div>
+                            <div class="table-cell" id="funeralDeclined">0</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pending Bookings Section -->
+            <section id="pending" class="admin-section">
+                <h2>Pending Booking Requests</h2>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterPendingBy('all')">All</button>
+                    <button class="filter-btn" onclick="filterPendingBy('wedding')">💍 Wedding</button>
+                    <button class="filter-btn" onclick="filterPendingBy('baptism')">👶 Baptism</button>
+                    <button class="filter-btn" onclick="filterPendingBy('funeral')">🙏 Funeral</button>
+                </div>
+
+                <div id="pendingBookingsList" class="bookings-list">
+                    <!-- Bookings will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Approved Bookings Section -->
+            <section id="approved" class="admin-section">
+                <h2>Approved Bookings</h2>
+                <div id="approvedBookingsList" class="bookings-list">
+                    <!-- Approved bookings will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Declined Bookings Section -->
+            <section id="declined" class="admin-section">
+                <h2>Declined Bookings</h2>
+                <div id="declinedBookingsList" class="bookings-list">
+                    <!-- Declined bookings will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section id="calendar" class="admin-section">
+                <h2>Booking Calendar</h2>
+                <div class="calendar-container">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="admin-section">
+                <h2>Admin Settings</h2>
+                <div class="settings-container">
+                    <div class="setting-group">
+                        <h3>Change Admin Password</h3>
+                        <input type="password" id="currentPassword" placeholder="Current Password">
+                        <input type="password" id="newPassword" placeholder="New Password">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                        <button class="btn btn-primary" onclick="changePassword()">Update Password</button>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>Add Admin User</h3>
+                        <input type="text" id="newAdminUsername" placeholder="Username">
+                        <input type="password" id="newAdminPassword" placeholder="Password">
+                        <button class="btn btn-primary" onclick="addAdminUser()">Add User</button>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>System Information</h3>
+                        <p><strong>Current Time:</strong> <span id="systemTime">--:--:--</span></p>
+                        <p><strong>Total Bookings:</strong> <span id="systemTotalBookings">0</span></p>
+                        <p><strong>System Status:</strong> <span style="color: green;">✓ Operational</span></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Booking Details Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Booking Details</h2>
+            <div id="bookingDetails" class="booking-details">
+                <!-- Details will be loaded here -->
+            </div>
+
+            <div class="booking-actions">
+                <button class="btn btn-success" onclick="approveBooking()">✓ Approve Booking</button>
+                <button class="btn btn-danger" onclick="declineBooking()">✗ Decline Booking</button>
+                <button class="btn btn-secondary" onclick="holdBooking()">⏳ Hold Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approval Form Modal -->
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeApprovalModal()">&times;</span>
+            <h2>Approve Booking</h2>
+            <div class="form-group">
+                <label>Admin Notes</label>
+                <textarea id="approvalNotes" placeholder="Add notes about this approval..." rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="sendEmail"> Send confirmation email to customer</label>
+            </div>
+            <button class="btn btn-success" onclick="confirmApproval()">Confirm Approval</button>
+            <button class="btn btn-secondary" onclick="closeApprovalModal()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Decline Form Modal -->
+    <div id="declineModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeclineModal()">&times;</span>
+            <h2>Decline Booking</h2>
+            <div class="form-group">
+                <label>Reason for Decline *</label>
+                <select id="declineReason">
+                    <option value="">Select a reason...</option>
+                    <option value="date-unavailable">Requested date/time unavailable</option>
+                    <option value="priest-unavailable">Priest unavailable</option>
+                    <option value="capacity-exceeded">Capacity exceeded</option>
+                    <option value="missing-documents">Missing required documents</option>
+                    <option value="eligibility-issue">Eligibility issue</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Decline Message to Customer</label>
+                <textarea id="declineMessage" placeholder="Explain the decline and suggest alternatives..." rows="4"></textarea>
+            </div>
+            <button class="btn btn-danger" onclick="confirmDecline()">Confirm Decline</button>
+            <button class="btn btn-secondary" onclick="closeDeclineModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="../client/client.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
